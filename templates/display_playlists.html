@@ -1,0 +1,9 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}Playlists{% endblock %}
+    {% block content %}
+    <ul>
+        {% for item in playlists %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+    {% endblock %}
