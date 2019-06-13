@@ -9,7 +9,7 @@ from configparser import ConfigParser
 
 import spotiwise 
 from spotiwise import oauth2
-from spotiwise.objects_classes import SpotiwiseArtist, SpotiwiseAlbum, SpotiwiseTrack, SpotiwisePlayback, SpotiwisePlaylist, SpotiwiseItem
+from spotiwise.object_classes import SpotiwiseArtist, SpotiwiseAlbum, SpotiwiseTrack, SpotiwisePlayback, SpotiwisePlaylist, SpotiwiseItem
 
 
 SCOPES = [
@@ -100,7 +100,7 @@ def spotify_authorized():
     # except AssertionError:
     #     breakpoint()
     # spotify_username = me.data['id']
-    sp = spotipy.Spotify(auth=token)
+    sp = spotiwise.Spotify(auth=token)
     spotify_username = sp.me().get('id')
     print(f'token: {token}')
     with open('{}_token.dat'.format(spotify_username), 'w') as f:
