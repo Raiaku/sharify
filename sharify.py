@@ -6,10 +6,11 @@ from flask import Flask, render_template, url_for, flash, session, request, json
 from flask_oauthlib.client import OAuth, OAuthException
 from flask_bootstrap import Bootstrap
 from configparser import ConfigParser
-import spotipy
+
 import spotiwise 
-from spotipy import oauth2
-from spotipy.object_classes import SpotiwiseArtist, SpotiwiseAlbum, SpotiwiseTrack, SpotiwisePlayback, SpotiwisePlaylist, SpotiwiseItem
+from spotiwise import oauth2
+from spotiwise.objects_classes import SpotiwiseArtist, SpotiwiseAlbum, SpotiwiseTrack, SpotiwisePlayback, SpotiwisePlaylist, SpotiwiseItem
+
 
 SCOPES = [
     'playlist-read-private',
