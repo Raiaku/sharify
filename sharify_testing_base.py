@@ -44,7 +44,7 @@ SCOPES = [
     'user-read-recently-played'
 ]
 username = 'Raiaku'
-redirect_url = 'http://127.0.0.1:5001/login/authorized'
+redirect_url = 'http://localhost:5001/login/authorized'
 scopes = ' '.join(SCOPES)
 
 
