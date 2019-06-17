@@ -131,8 +131,7 @@ dmypy.json
 
 # Custom
 bphzi1efbk03djkjcvr3ui0wm_token.dat 
-*.ini
-sharify_testing_base.py 
+*.ini 
 sharify_fairify_testing.log
 start.fish
 start.sh
