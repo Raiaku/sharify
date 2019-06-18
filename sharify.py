@@ -1,7 +1,16 @@
 __author__ = 'Raiaku'
 
 import os
-from flask import Flask, render_template, url_for, flash, session, request, jsonify, redirect
+from flask import (
+    Flask, 
+    render_template, 
+    url_for, 
+    flash, 
+    session, 
+    request, 
+    jsonify, 
+    redirect
+)
 
 from flask_oauthlib.client import OAuth, OAuthException
 from flask_bootstrap import Bootstrap
@@ -9,7 +18,14 @@ from configparser import ConfigParser
 
 import spotiwise 
 from spotiwise import oauth2
-from spotiwise.object_classes import SpotiwiseArtist, SpotiwiseAlbum, SpotiwiseTrack, SpotiwisePlayback, SpotiwisePlaylist, SpotiwiseItem
+from spotiwise.object_classes import (
+    SpotiwiseArtist, 
+    SpotiwiseAlbum, 
+    SpotiwiseTrack, 
+    SpotiwisePlayback, 
+    SpotiwisePlaylist, 
+    SpotiwiseItem
+)
 
 
 SCOPES = [
