@@ -44,3 +44,13 @@ def create_contributer_dict(playlist_name):
 		except KeyError:
 			contributers_dict[item.added_by] = [item]
     return contributers_dict
+
+def get_highest_contributer(contributer_dict):
+    """Gets highest contributer from grouped dictionary and number of items they contributed
+    
+    :param contributer_dict: Dictionary of items grouped by user that added them
+    :type playlist: Dictionary
+    :returns: SpotiwiseUser object for highest contributer and number of items they contributed as a tuple
+    :rtype: Tuple[SpotiwiseUser, int]
+    """
+    
