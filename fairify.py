@@ -17,7 +17,7 @@ def get_playlist_uri(playlist_name, sp):
     return playlist_name_uri_map.get(playlist_name)
     
 
-def get_playlist(playlist_name):
+def get_playlist(playlist_name, sp):
     """Get instantiated playlist object using provided playlist name
     
     :param playlist_name: Name of playlist to locate
@@ -25,11 +25,11 @@ def get_playlist(playlist_name):
     :returns: Playlist object with items
     :rtype: SpotiwisePlaylist
     """
-    playlist_uri = get_playlist_uri(playlist_name).split(':')
+    playlist_uri = get_playlist_uri(playlist_name, sp).split(':')
     return sp.user_playlist(playlist_uri[2], playlist_uri[-1], precache=True)
 
 
-def create_contributor_dict(playlist_name):
+def create_contributor_dict(playlist_name, sp):
     """Generates dictionary with contributers as keys for all items in playlist
     
     :param playlist_name: Name of Playlist object to generate dict from
@@ -38,10 +38,10 @@ def create_contributor_dict(playlist_name):
     :rtype: Dict[SpotiwiseUser, List[SpotiwiseItem]]
     """
     contributors_dict = {}
-    playlist = get_playlist(playlist_name)
+    playlist = get_playlist(playlist_name, sp)
     for item in playlist.items:
         try:
-             contributers_dict[item.added_by].append(item)
+             contributors_dict[item.added_by].append(item)
         except KeyError:
             contributors_dict[item.added_by] = [item]
     return contributors_dict
