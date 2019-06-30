@@ -39,11 +39,11 @@ def create_contributor_dict(playlist_name):
     """
     contributors_dict = {}
     playlist = get_playlist(playlist_name)
-	for item in playlist.items:
-		try:
-			contributers_dict[item.added_by].append(item)
-		except KeyError:
-			contributors_dict[item.added_by] = [item]
+    for item in playlist.items:
+        try:
+             contributers_dict[item.added_by].append(item)
+        except KeyError:
+            contributors_dict[item.added_by] = [item]
     return contributors_dict
 
 
