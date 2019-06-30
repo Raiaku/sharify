@@ -87,6 +87,7 @@ spotify = oauth.remote_app(
 def hello_world():
     return 'Hello, World!'
 
+
 @app.route('/login')
 def login():
     callback = url_for(
@@ -129,6 +130,7 @@ def spotify_authorized():
     #     me.data['display_name'],
     #     request.args.get('next')
     # )
+
 
 def display_playlists(playlists):
     result = []
